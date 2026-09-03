@@ -49,41 +49,22 @@ img{
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
-  min-width:190px;
+  min-width:auto;
 }
 
-.brand-mark{
-  width:48px;
-  height:48px;
-  border:1.5px solid var(--gold);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-family:"DM Sans",Arial,sans-serif;
-  font-style:normal;
-  font-weight:600;
-  letter-spacing:-.06em;
-  font-size:22px;
-  color:var(--gold);
+.brand-logo{
+  width:185px;
+  height:auto;
+  max-height:64px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
 }
 
+.brand-mark,
 .brand-copy{
-  display:flex;
-  flex-direction:column;
-  letter-spacing:.18em;
+  display:none;
 }
-
-.brand-copy small{
-  font-size:8px;
-}
-
-.brand-copy strong{
-  font-size:14px;
-  font-weight:600;
-  color:var(--olive);
-}
-
 .nav{
   display:flex;
   justify-content:center;
@@ -711,6 +692,10 @@ img{
   .hero-copy{
     padding:48px 7vw 55px;
   }
+  .brand-logo{
+  width:135px;
+  max-height:48px;
+}
 
   .hero h1{
     font-size:36px;
