@@ -558,10 +558,14 @@ img{
   display:grid;
   place-items:center;
   background:#25d366;
-  color:white;
-  font-size:26px;
+  color:#fff;
   box-shadow:0 10px 25px rgba(0,0,0,.22);
   z-index:30;
+}
+
+.floating-wa svg{
+  width:27px;
+  height:27px;
 }
 
 /* TABLET */
