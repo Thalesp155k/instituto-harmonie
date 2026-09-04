@@ -354,7 +354,7 @@
     font-size:14px;
     line-height:1.7;
   }
-  .video-container{
+.video-container{
   position:relative;
 }
 
@@ -363,36 +363,55 @@
   right:16px;
   bottom:16px;
 
-  width:46px;
-  height:46px;
+  width:44px;
+  height:44px;
 
-  border:none;
+  border:1px solid rgba(255,255,255,.35);
   border-radius:50%;
 
   display:grid;
   place-items:center;
 
-  background:rgba(255,255,255,.92);
-  color:var(--olive);
+  background:rgba(24,24,24,.65);
+  color:#fff;
 
-  box-shadow:0 8px 22px rgba(0,0,0,.18);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+
+  box-shadow:0 8px 25px rgba(0,0,0,.18);
 
   cursor:pointer;
-  z-index:5;
+  z-index:10;
 
-  transition:.2s ease;
+  transition:transform .2s ease, background .2s ease;
 }
 
 .video-sound-btn:hover{
   transform:scale(1.06);
+  background:rgba(24,24,24,.82);
 }
 
 .sound-icon{
-  font-size:19px;
-  line-height:1;
+  width:20px;
+  height:20px;
+  fill:currentColor;
 }
 
+@media(max-width:620px){
 
+  .video-sound-btn{
+    width:42px;
+    height:42px;
+    right:12px;
+    bottom:12px;
+  }
+
+  .sound-icon{
+    width:19px;
+    height:19px;
+  }
+
+}
   /* =========================
      GALERIA MOBILE
   ========================== */
