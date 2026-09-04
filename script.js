@@ -12,17 +12,46 @@ if (year) year.textContent = new Date().getFullYear();
 
 const videoHarmonie = document.querySelector(".harmonie-video");
 const soundBtn = document.querySelector(".video-sound-btn");
+const soundIcon = document.querySelector(".sound-icon");
 
-if (videoHarmonie && soundBtn) {
-  soundBtn.addEventListener("click", () => {
-    videoHarmonie.muted = !videoHarmonie.muted;
+if (videoHarmonie) {
 
-    if (videoHarmonie.muted) {
-      soundBtn.textContent = "Ativar som";
-    } else {
-      soundBtn.textContent = "Desativar som";
-      videoHarmonie.play();
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          videoHarmonie.play().catch(() => {});
+
+        } else {
+
+          videoHarmonie.pause();
+
+        }
+
+      });
+    },
+    {
+      threshold: 0.35
     }
-  });
+  );
+
+  videoObserver.observe(videoHarmonie);
+
+
+  if (soundBtn && soundIcon) {
+
+    soundBtn.addEventListener("click", () => {
+
+      videoHarmonie.muted = !videoHarmonie.muted;
+
+      soundIcon.textContent = videoHarmonie.muted ? "🔇" : "🔊";
+
+      videoHarmonie.play().catch(() => {});
+
+    });
+
+  }
+
 }
-  observer.observe(harmonieVideo);
