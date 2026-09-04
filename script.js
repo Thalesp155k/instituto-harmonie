@@ -9,3 +9,26 @@ if (menuBtn && nav) {
 }
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
+
+const harmonieVideo = document.querySelector(".harmonie-video");
+
+if (harmonieVideo) {
+  harmonieVideo.muted = true;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          harmonieVideo.play().catch(() => {});
+        } else {
+          harmonieVideo.pause();
+        }
+      });
+    },
+    {
+      threshold: 0.35
+    }
+  );
+
+  observer.observe(harmonieVideo);
+}
