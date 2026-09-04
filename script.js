@@ -10,25 +10,19 @@ if (menuBtn && nav) {
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
-const harmonieVideo = document.querySelector(".harmonie-video");
+const videoHarmonie = document.querySelector(".harmonie-video");
+const soundBtn = document.querySelector(".video-sound-btn");
 
-if (harmonieVideo) {
-  harmonieVideo.muted = true;
+if (videoHarmonie && soundBtn) {
+  soundBtn.addEventListener("click", () => {
+    videoHarmonie.muted = !videoHarmonie.muted;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          harmonieVideo.play().catch(() => {});
-        } else {
-          harmonieVideo.pause();
-        }
-      });
-    },
-    {
-      threshold: 0.35
+    if (videoHarmonie.muted) {
+      soundBtn.textContent = "Ativar som";
+    } else {
+      soundBtn.textContent = "Desativar som";
+      videoHarmonie.play();
     }
-  );
-
-  observer.observe(harmonieVideo);
+  });
 }
+  observer.observe(harmonieVideo);
