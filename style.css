@@ -16,69 +16,30 @@
 @media(max-width:620px){.brand{min-width:auto}.brand-mark{width:42px;height:42px}.brand-copy strong{font-size:12px}.hero-media{min-height:300px}.hero-copy{padding:48px 7vw 55px}.hero h1{font-size:39px}.section{padding:58px 6vw}.section-title h2{font-size:31px}.about-copy h2,.location h2{font-size:32px}.about-real{min-height:370px}.photo-grid{grid-template-columns:1fr;grid-template-rows:none}.photo-tall,.photo-grid .photo-card:nth-child(4){grid-column:auto;grid-row:auto}.photo-card{height:270px}.process{padding:58px 6vw}.process .section-title h2{font-size:27px}.footer{grid-template-columns:1fr}.location-copy{padding:48px 7vw}}
 
 
-/* VIDEO INSTITUTO HARMONIE */
-.harmonie-video-section{
-  display:grid;
-  grid-template-columns:1fr minmax(280px,420px);
-  align-items:center;
-  gap:72px;
-  background:var(--paper);
-}
-.harmonie-video-copy{max-width:560px}
-.harmonie-video-copy h2{
-  font-family:"Playfair Display",serif;
-  font-size:44px;
-  line-height:1.08;
-  font-weight:500;
-  margin:14px 0 18px;
-}
-.harmonie-video-copy h2 em{color:var(--olive2);font-weight:500}
-.harmonie-video-copy p{
-  max-width:510px;
-  margin:0;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.75;
-}
-.harmonie-video-frame{
-  width:100%;
-  max-width:390px;
-  justify-self:center;
-  overflow:hidden;
-  border-radius:18px;
+.video-harmonie{
   background:var(--cream);
-  box-shadow:0 18px 45px rgba(35,35,31,.12);
-}
-.harmonie-video{
-  display:block;
-  width:100%;
-  aspect-ratio:9 / 16;
-  object-fit:cover;
-  background:#000;
 }
 
-@media(max-width:980px){
-  .harmonie-video-section{
-    grid-template-columns:1fr;
-    gap:36px;
-  }
-  .harmonie-video-copy{
-    max-width:650px;
-    margin:0 auto;
-    text-align:center;
-  }
-  .harmonie-video-frame{max-width:420px}
+.video-container{
+  width:100%;
+  max-width:520px;
+  margin:38px auto 0;
+  overflow:hidden;
+  border-radius:16px;
+  background:#000;
+  box-shadow:0 18px 45px rgba(0,0,0,.10);
+}
+
+.harmonie-video{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
 @media(max-width:620px){
-  .harmonie-video-section{
-    padding:58px 6vw;
-    gap:28px;
-  }
-  .harmonie-video-copy h2{font-size:31px}
-  .harmonie-video-copy p{font-size:14px}
-  .harmonie-video-frame{
-    width:min(100%,360px);
-    border-radius:14px;
+  .video-container{
+    max-width:100%;
+    margin-top:26px;
+    border-radius:10px;
   }
 }
